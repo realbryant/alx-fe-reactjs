@@ -3,10 +3,10 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
-import ProfilePage from './ProfilePage';
+import ProfilePage from './ProfilePage.jsx';
 import UserInfo from "./UserInfo";
-import UserContext from "./UserContext";
-import UserDetails from "./UserDetails";  
+import UserContext from './UserContext.js';
+import UserDetails from "./UserDetails.jsx";  
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <> 
-    const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  
   
       <div>
         <WelcomeMessage />,
