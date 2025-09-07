@@ -3,6 +3,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
+import Counter from './components/Counter'; 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -20,6 +21,10 @@ function App() {
         <Footer />
         <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       </div>
+        <div>
+      <h1 style={{ textAlign: 'center' }}>Counter Application</h1>
+      <Counter />
+    </div>
       <div className="logos"> 
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
