@@ -1,5 +1,5 @@
 {
-  "name": "recipe-sharing-app",
+"name": "recipe-sharing-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -25,3 +25,4 @@
     "vite": "^7.1.6"
   }
 }
+
