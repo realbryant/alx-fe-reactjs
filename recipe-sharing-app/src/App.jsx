@@ -10,11 +10,11 @@ function App() {
   return (
     <>
       <div>
-        <div>
+      
       <h1>🍲 Recipe Sharing App</h1>
       <AddRecipeForm />
       <RecipeList />
-    </div>
+  
 
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
