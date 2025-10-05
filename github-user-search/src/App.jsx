@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { fetchGitHubUser } from "./services/githubService";
+import Search from "./components/Search";
+
 
 
 function App() {
@@ -15,6 +17,12 @@ function App() {
     }
   };
 
+  return (
+    <div>
+      <Search />
+    </div>
+  );
+}
   return (
     <div>
       <h1>GitHub User Search</h1>
@@ -34,10 +42,12 @@ function App() {
             <a href={userData.html_url} target="_blank">Profile</a>
           </p>
         </div>
+
       )}
-    </div>
+      </div>
   );
-}
+
+  
 
 export default App;
 

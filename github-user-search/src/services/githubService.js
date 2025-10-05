@@ -1,20 +1,16 @@
-
-// src/services/githubService.js
 import axios from "axios";
 
-const API_URL = "https://api.github.com/users/";
-const API_KEY = import.meta.env.VITE_APP_GITHUB_API_KEY;
+// Advanced search for multiple users
+export const advancedUserSearch = async (username, location, minRepos) => {
+  let query = "";
 
-export const fetchGitHubUser = async (username) => {
-  try {
-    const response = await axios.get(`${API_URL}${username}`, {
-      headers: {
-        Authorization: API_KEY ? `token ${API_KEY}` : undefined,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching GitHub user:", error);
-    throw error;
-  }
+  if (username) query += `${username} in:login `;
+  if (location) query += `location:${location} `;
+  if (minRepos) query += `repos:>=${minRepos}`;
+
+  const response = await axios.get(
+    `https://api.github.com/search/users?q=${encodeURIComponent(query)}`
+  );
+  return response.data;
 };
+
