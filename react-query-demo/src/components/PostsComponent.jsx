@@ -11,7 +11,7 @@ const fetchPosts = async () => {
 };
 
 function PostsComponent() {
-  // useQuery hook manages fetching, caching, and error states
+  // useQuery with advanced configuration
   const {
     data: posts,
     error,
@@ -19,7 +19,10 @@ function PostsComponent() {
     isError,
     refetch,
   } = useQuery("posts", fetchPosts, {
-    staleTime: 30000, // 30 seconds cache freshness
+    staleTime: 30000, // 30 seconds before data becomes stale
+    cacheTime: 60000, // 1 minute before cached data is garbage collected
+    refetchOnWindowFocus: true, // refetch when window regains focus
+    keepPreviousData: true, // keep old data while fetching new
   });
 
   if (isLoading) return <p>Loading posts...</p>;
